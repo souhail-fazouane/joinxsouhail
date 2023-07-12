@@ -23,9 +23,13 @@ module.exports = {
       colors: {
         hintedGrey1: '#0e0e10',
         hintedGrey2: '#18181b',
-        backgroundButton: '#9147ff',
+        hintedGrey4: '#26262c',
+        primaryButton: '#9147ff',
+        primaryButtonHover : "#772ce8",
+        hintedGrey8: '#adadb8',
         hintedGrey11: '#dedee3',
-        colorMessage: '#efeff1'
+        colorMessage: '#efeff1',
+        hoverElement: "rgba(83,83,95,.48)"
       }
     },
   },
