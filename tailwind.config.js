@@ -29,7 +29,8 @@ module.exports = {
         hintedGrey8: '#adadb8',
         hintedGrey11: '#dedee3',
         colorMessage: '#efeff1',
-        hoverElement: "rgba(83,83,95,.48)"
+        hoverElement: "rgba(83,83,95,.48)",
+        opacity9: 'rgba(0,0,0,.6)'
       }
     },
   },
