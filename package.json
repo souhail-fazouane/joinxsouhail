@@ -21,7 +21,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "socket.io-client": "4.5.1",
-    "typescript": "5.1.6"
+    "typescript": "5.1.6",
+    "utf-8-validate": "^5.0.10"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
