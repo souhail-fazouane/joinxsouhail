@@ -1,3 +1,4 @@
+"use client";
 import { DrawerOpenAtom } from "@/components/Drawer/store";
 import { useAtomValue } from "jotai";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
@@ -32,30 +33,15 @@ export const useSocket = () => {
 
   const drawerOpen = useAtomValue(DrawerOpenAtom("chat"));
 
-  const observer = useMemo(
-    () =>
-      new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setStopScroll(false);
-          } else {
-            setStopScroll(true);
-          }
-        },
-        {
-          threshold: 0.9,
-        }
-      ),
-    []
-  );
+  const observer = useRef<IntersectionObserver>();
 
   const lastMessageElement = useRef<Element | null | undefined>(null);
 
   const unobserve = useCallback(() => {
-    if (lastMessageElement.current && observer) {
-      observer.unobserve(lastMessageElement.current);
+    if (lastMessageElement.current && observer.current) {
+      observer.current.unobserve(lastMessageElement.current);
     }
-  }, [observer]);
+  }, []);
 
   const [newMessage, setNewMessage] = useState("");
 
@@ -83,6 +69,21 @@ export const useSocket = () => {
   };
 
   useEffect(() => {
+    observer.current = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStopScroll(false);
+        } else {
+          setStopScroll(true);
+        }
+      },
+      {
+        threshold: 0.9,
+      }
+    );
+  }, []);
+
+  useEffect(() => {
     if (typeof document !== undefined) {
       unobserve();
 
@@ -97,13 +98,13 @@ export const useSocket = () => {
           });
         }
         setTimeout(() => {
-          if (lastMessageElement.current) {
-            observer.observe(lastMessageElement.current);
+          if (lastMessageElement.current && observer.current) {
+            observer.current.observe(lastMessageElement.current);
           }
         }, 1000);
       }
     }
-  }, [lastMessageElement, listMessage, observer, unobserve]);
+  }, [lastMessageElement, listMessage, unobserve]);
 
   useEffect(() => {
     if (!drawerOpen) {
