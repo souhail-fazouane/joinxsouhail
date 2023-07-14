@@ -15,9 +15,9 @@ Voici le lien du site en prod: [https://joinxsouhail.vercel.app/](https://joinxs
 - J'ai commencé par tester le site de twitch pour voir toutes les fonctionnalités. Je suis passé à noter ce qui est le plus prioritaire et voir le timing que je pourrais prendre pour chaque tâche.
 - Je suis passé à la partie de décomposer la page sous forme de petit composant globale et leurs interaction mutuelle. J'ai remarqué que la partie du chat pousse le bloc de vidéo.
 - Je me suis concentré par la suite sur les différents bloc du chat section pour ainsi voir quels sont les composants que je devrais developper pour cette page et quels sont les composants globale que je devrais déjà coder en avance.
-- Structure du code (1h-1h30)
+- Structure du code (30min)
 - Coder les composants basique et vérifier le fonctionnement (1h-1h30)
-- Coder les composants les plus compliqués (par exemple: FloatingChatScrolling, ...) (1h)
+- Coder les composants les plus compliqués (par exemple: FloatingChatScrolling, ...) (1h-1h30)
 - Tester l'application (1h) (plusieurs aller retour)
 - Collecter l'information du site de twitch (2h voir les padding, couleur et autres)
 
