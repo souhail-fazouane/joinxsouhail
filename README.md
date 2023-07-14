@@ -1,35 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Interview Test JOIN
 
-## Getting Started
+Voici le lien du site en prod: [https://joinxsouhail.vercel.app/](https://joinxsouhail.vercel.app/)
 
-First, run the development server:
+## Stack Tech
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- Typescript
+- NextJS
+- Tailwindcss
+- Styled-Components
+- react-spring
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Durée des taches
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- J'ai commencé par tester le site de twitch pour voir toutes les fonctionnalités. Je suis passé à noter ce qui est le plus prioritaire et voir le timing que je pourrais prendre pour chaque tâche.
+- Je suis passé à la partie de décomposer la page sous forme de petit composant globale et leurs interaction mutuelle. J'ai remarqué que la partie du chat pousse le bloc de vidéo.
+- Je me suis concentré par la suite sur les différents bloc du chat section pour ainsi voir quels sont les composants que je devrais developper pour cette page et quels sont les composants globale que je devrais déjà coder en avance.
+- Structure du code (1h-1h30)
+- Coder les composants basique et vérifier le fonctionnement (1h-1h30)
+- Coder les composants les plus compliqués (par exemple: FloatingChatScrolling, ...) (1h)
+- Tester l'application (1h) (plusieurs aller retour)
+- Collecter l'information du site de twitch (2h voir les padding, couleur et autres)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Difficulté
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# joinxsouhail
+- J'ai trouvé une difficulté à collecter les gaps , padding, margin et autres sur le site de twitch j'aurai préféré utiliser un Figma pour être le plus proche du design.
+- J'ai utilisé IntersectionObserver ça m'a facilité le code du FloatingChatScrolling.
+- J'ai choisi Tailwindcss parce qu'il aide sur la gestion du design style (colors, fontSize, fontFamily, fontWeight).
