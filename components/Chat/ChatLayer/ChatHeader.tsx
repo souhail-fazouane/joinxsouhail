@@ -1,6 +1,5 @@
 import { ClickableIcon } from "@/components/ClickableIcon";
 import { CloseDrawer } from "@/components/Drawer/CloseDrawer";
-import { OpenDrawer } from "@/components/Drawer/OpenDrawer";
 import { CommunityIcon } from "@/icons/Community";
 
 export function ChatHeader(): JSX.Element {

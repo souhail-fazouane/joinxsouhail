@@ -15,6 +15,45 @@ import React, {
 } from "react";
 import { MessageElement } from "./MessageElement";
 
+const FloatingChatScrolling = ({
+  stopScroll,
+  scrollToLast,
+}: {
+  stopScroll: boolean;
+  scrollToLast: () => void;
+}) => {
+  return (
+    <div
+      className="flex absolute  bottom-[10px]  left-[24px] right-[24px] "
+      style={{
+        display: stopScroll ? "flex" : "none",
+        opacity: stopScroll ? 1 : 0,
+      }}
+    >
+      <button
+        className="group backdrop-blur-sm bg-opacity9 rounded-[6px] flex w-full py-[5px] px-[10px] text-sm items-center gap-1"
+        onClick={() => {
+          scrollToLast();
+        }}
+      >
+        <div className="group-hover:flex hidden h-[20px] w-[20px] justify-center items-center">
+          <DownArrowIcon mainColor="#fff" height="12px" width="12px" />
+        </div>
+        <div className="group-hover:hidden flex h-[20px] w-[20px] justify-center items-center">
+          <PauseIcon mainColor="#fff" height="16px" width="16px" />
+        </div>
+
+        <p className="group-hover:flex hidden w-full text-center text-white font-semibold  justify-center">
+          Voir les nouveaux messages
+        </p>
+        <p className="group-hover:hidden flex w-full text-center text-white font-semibold items-center">
+          Chat mis en pause à cause du défilement
+        </p>
+      </button>
+    </div>
+  );
+};
+
 type MessageContainerProps = {
   container: RefObject<HTMLDivElement>;
   listMessage: Message[];
@@ -38,34 +77,10 @@ export function MessageContainer({
           <MessageElement key={index} message={message} />
         ))}
       </div>
-      <div
-        className="flex absolute  bottom-[10px]  left-[24px] right-[24px] "
-        style={{
-          display: stopScroll ? "flex" : "none",
-          opacity: stopScroll ? 1 : 0,
-        }}
-      >
-        <button
-          className="group backdrop-blur-sm bg-opacity9 rounded-[6px] flex w-full py-[5px] px-[10px] text-sm items-center gap-1"
-          onClick={() => {
-            scrollToLast();
-          }}
-        >
-          <div className="group-hover:flex hidden h-[20px] w-[20px] justify-center items-center">
-            <DownArrowIcon mainColor="#fff" height="12px" width="12px" />
-          </div>
-          <div className="group-hover:hidden flex h-[20px] w-[20px] justify-center items-center">
-            <PauseIcon mainColor="#fff" height="16px" width="16px" />
-          </div>
-
-          <p className="group-hover:flex hidden w-full text-center text-white font-semibold  justify-center">
-            Voir les nouveaux messages
-          </p>
-          <p className="group-hover:hidden flex w-full text-center text-white font-semibold items-center">
-            Chat mis en pause à cause du défilement
-          </p>
-        </button>
-      </div>
+      <FloatingChatScrolling
+        stopScroll={stopScroll}
+        scrollToLast={scrollToLast}
+      />
     </div>
   );
 }

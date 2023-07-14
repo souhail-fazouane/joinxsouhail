@@ -12,18 +12,18 @@ export function MessageElement({ message }: MessageElementProps): JSX.Element {
       <div className=" group px-[10px] rounded-[6px] py-[8px] hover:bg-hoverElement w-full relative">
         <p className="text-colorMessage text-base  ">
           <span
-            className="font-bold hover:bg-hoverElement py-1 rounded-[6px]"
+            className="font-bold hover:bg-hoverElement py-1 rounded-[6px] cursor-pointer"
             style={{ color: message.user.color }}
           >
             {message.user.username}
           </span>
           : {message.text}
         </p>
-        <div className="group-hover:flex hidden  absolute right-[0px] -top-[10px] bg-hintedGrey2 hover:flex rounded-[6px] border border-black shadow-indigo-500/40">
+        <button className="group-hover:flex hidden  absolute right-[0px] -top-[10px] bg-hintedGrey2 hover:flex rounded-[6px] border border-black shadow-indigo-500/40">
           <ClickableIcon height="30px" width="30px" borderRadius="6px">
             <AnswerIcon height="20px" width="20px" mainColor="#fff" />
           </ClickableIcon>
-        </div>
+        </button>
       </div>
     </div>
   );

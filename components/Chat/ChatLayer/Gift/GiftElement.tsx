@@ -40,7 +40,7 @@ export function GiftElement({
         </div>
         <div className="flex flex-col ">
           <p className="text-hintedGrey11 text-base font-bold">{username}</p>
-          <div className="flex gap-1.5 items-center">
+          <div className="flex gap-1 items-center">
             <div className="relative h-[13px] w-[13px]">
               <div className="absolute top-0 bottom-0 left-0 right-0">
                 <NextImg
